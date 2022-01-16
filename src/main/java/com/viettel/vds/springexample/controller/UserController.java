@@ -4,6 +4,7 @@ import com.viettel.vds.springexample.dto.request.UserRequest;
 import com.viettel.vds.springexample.dto.response.UserResponse;
 import com.viettel.vds.springexample.mapper.UserMapper;
 import com.viettel.vds.springexample.service.UserService;
+import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +30,7 @@ public class UserController {
 
   @ResponseStatus(HttpStatus.CREATED)
   @PostMapping
-  public UserResponse create(@RequestBody UserRequest request) {
+  public UserResponse create(@RequestBody @Valid UserRequest request) {
     return userMapper.domainToResponse(userService.create(userMapper.requestToDomain(request)));
   }
 }
