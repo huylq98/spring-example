@@ -1,6 +1,3 @@
-server:
-  port: 8080
-
 spring:
   datasource:
     url: jdbc:h2:mem:testdb
@@ -14,4 +11,10 @@ spring:
       hibernate:
         format_sql: true
     open-in-view: true
-    defer-datasource-initialization: true
+  application:
+    name: @project.name@
+
+#wso2-training
+wso2:
+  training:
+    url: http://wso2training-restsamples.wso2apps.com
