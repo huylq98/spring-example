@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://vds.viettel.com/springexample/soap/edm"
+           elementFormDefault="qualified">
+
+    <xs:element name="vendReq">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ref" type="xs:string"/>
+                <xs:element name="amt">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:decimal">
+                                <xs:attribute name="cur" type="xs:string"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="numTokens" type="xs:int"/>
+                <xs:element name="meter" type="xs:string"/>
+                <xs:element name="payType">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="cash"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="vendRes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ref" type="xs:string"/>
+                <xs:element name="res"> <!-- response code & description -->
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="code" type="xs:string" use="required"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="util">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="addr" type="xs:string"/>
+                                <xs:attribute name="taxRef" type="xs:long"/>
+                                <xs:attribute name="distId" type="xs:string"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="tariff" type="xs:string"/>
+                <xs:element name="stdToken">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="units" type="xs:double"/>
+                                <xs:attribute name="amt" type="xs:decimal"/>
+                                <xs:attribute name="tax" type="xs:decimal"/>
+                                <xs:attribute name="desc" type="xs:string"/>
+                                <xs:attribute name="rctNum" type="xs:string"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="customerMsg" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="supGrpRef" type="xs:int"/>
+            <xs:attribute name="term" type="xs:string"/>
+            <xs:attribute name="seqNum" type="xs:int"/>
+            <xs:attribute name="time" type="xs:dateTime"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

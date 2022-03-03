@@ -131,7 +131,7 @@
                 </executions>
                 <configuration>
                     <sources>
-                        <source>${project.basedir}/src/main/resources/countries.xsd</source>
+                        <source>${project.basedir}/src/main/resources/edm.xsd</source>
                     </sources>
                     <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
                     <clearOutputDir>false</clearOutputDir>

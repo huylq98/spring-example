@@ -1,6 +1,6 @@
-package com.viettel.vds.springexample.controller.rest;
+package com.viettel.vds.springexample.controller;
 
-import com.viettel.vds.springexample.feign.HealthcareServiceFeignClient;
+import com.viettel.vds.springexample.service.feign.HealthcareServiceFeignClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

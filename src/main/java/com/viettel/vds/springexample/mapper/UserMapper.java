@@ -1,9 +1,9 @@
 package com.viettel.vds.springexample.mapper;
 
-import com.viettel.vds.springexample.domain.User;
-import com.viettel.vds.springexample.dto.request.UserRequest;
-import com.viettel.vds.springexample.dto.response.UserResponse;
-import com.viettel.vds.springexample.entity.UserEntity;
+import com.viettel.vds.springexample.model.domain.User;
+import com.viettel.vds.springexample.model.dto.request.UserRequest;
+import com.viettel.vds.springexample.model.dto.response.UserResponse;
+import com.viettel.vds.springexample.model.entity.UserEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
