@@ -6,7 +6,7 @@
     <xs:element name="vendReq">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="ref" type="xs:string"/>
+                <xs:element name="ref" type="xs:long"/>
                 <xs:element name="amt">
                     <xs:complexType>
                         <xs:simpleContent>
@@ -32,7 +32,7 @@
     <xs:element name="vendRes">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="ref" type="xs:string"/>
+                <xs:element name="ref" type="xs:long"/>
                 <xs:element name="res"> <!-- response code & description -->
                     <xs:complexType>
                         <xs:simpleContent>

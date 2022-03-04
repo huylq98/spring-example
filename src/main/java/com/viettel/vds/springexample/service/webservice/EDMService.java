@@ -20,7 +20,8 @@ public class EDMService {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = LOCAL_PART)
     @ResponsePayload
     public VendRes payment(@RequestPayload VendReq vendReq) {
-        log.info("Request Ref: {}", vendReq.getRef());
+        log.info("Request Payload: {ref={}, amt={}, numTokens={}, meter={}, payType={}}", vendReq.getRef(), vendReq.getAmt()
+                                                                                                                   .getValue(), vendReq.getNumTokens(), vendReq.getMeter(), vendReq.getPayType());
         VendRes.Res res = new VendRes.Res();
         res.setCode("elec000");
         res.setValue("OK");
@@ -40,14 +41,16 @@ public class EDMService {
         stdToken.setValue("13051848180630442465");
 
         VendRes vendRes = new VendRes();
-        vendRes.setRef("19290241434");
+        vendRes.setRef(19290241434L);
         vendRes.setRes(res);
         vendRes.setUtil(util);
         vendRes.setTariff("EDM-ASCCHKDomestico-TI1");
         vendRes.setStdToken(stdToken);
         vendRes.setCustomerMsg("Credit Vend");
 
-        log.info("Response REf: {}", vendRes.getRef());
+        log.info("Response Payload: {ref={}, resCode={}, resDesc={}}", vendRes.getRef(), vendRes.getRes()
+                                                                                                .getCode(), vendRes.getRes()
+                                                                                                                   .getValue());
         return vendRes;
     }
 }

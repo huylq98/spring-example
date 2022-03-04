@@ -22,5 +22,5 @@ wso2:
 #soap
 web-service:
   edm:
-    namspace-uri: http://vds.viettel.com/springexample/soap/edm
+    namespace-uri: http://vds.viettel.com/springexample/soap/edm
     local-part: vendReq
