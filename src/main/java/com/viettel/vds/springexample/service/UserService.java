@@ -1,6 +1,6 @@
 package com.viettel.vds.springexample.service;
 
-import com.viettel.vds.springexample.domain.User;
+import com.viettel.vds.springexample.model.domain.User;
 
 public interface UserService {
 

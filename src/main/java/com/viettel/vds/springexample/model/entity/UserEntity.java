@@ -1,6 +1,6 @@
-package com.viettel.vds.springexample.entity;
+package com.viettel.vds.springexample.model.entity;
 
-import com.viettel.vds.springexample.domain.User;
+import com.viettel.vds.springexample.model.domain.User;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

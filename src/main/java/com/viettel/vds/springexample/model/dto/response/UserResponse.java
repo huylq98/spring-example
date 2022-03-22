@@ -1,4 +1,4 @@
-package com.viettel.vds.springexample.dto.response;
+package com.viettel.vds.springexample.model.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

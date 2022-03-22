@@ -1,4 +1,4 @@
-package com.viettel.vds.springexample.domain;
+package com.viettel.vds.springexample.model.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

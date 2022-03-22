@@ -1,4 +1,4 @@
-package com.viettel.vds.springexample.dto.request;
+package com.viettel.vds.springexample.model.dto.request;
 
 import javax.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;

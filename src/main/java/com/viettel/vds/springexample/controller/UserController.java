@@ -1,8 +1,8 @@
 package com.viettel.vds.springexample.controller;
 
-import com.viettel.vds.springexample.dto.request.UserRequest;
-import com.viettel.vds.springexample.dto.response.UserResponse;
 import com.viettel.vds.springexample.mapper.UserMapper;
+import com.viettel.vds.springexample.model.dto.request.UserRequest;
+import com.viettel.vds.springexample.model.dto.response.UserResponse;
 import com.viettel.vds.springexample.service.UserService;
 import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
