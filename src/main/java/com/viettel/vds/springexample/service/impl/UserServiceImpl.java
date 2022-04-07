@@ -1,7 +1,7 @@
 package com.viettel.vds.springexample.service.impl;
 
-import com.viettel.vds.springexample.domain.User;
-import com.viettel.vds.springexample.mapper.UserMapper;
+import com.viettel.vds.springexample.model.domain.User;
+import com.viettel.vds.springexample.model.mapper.UserMapper;
 import com.viettel.vds.springexample.repository.UserRepository;
 import com.viettel.vds.springexample.service.UserService;
 import java.util.NoSuchElementException;
