@@ -2,6 +2,7 @@ package vn.com.huylq.springexample.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import vn.com.huylq.springexample.model.domain.User;
 import vn.com.huylq.springexample.model.entity.UserEntity;
@@ -11,6 +12,7 @@ import vn.com.huylq.springexample.service.UserService;
 
 import javax.transaction.Transactional;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +22,15 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
+
+    @Override
+    public Page<User> getAll(Pageable pageable) {
+        Page<UserEntity> userEntities = userRepository.findAll(pageable);
+        return new PageImpl<>(
+                userEntities.stream().map(userMapper::UserEntityToUser).collect(Collectors.toList()),
+                pageable,
+                userEntities.getTotalElements());
+    }
 
     @Override
     public User get(Long id) {

@@ -1,14 +1,17 @@
 package vn.com.huylq.springexample.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import vn.com.huylq.springexample.model.domain.User;
 import vn.com.huylq.springexample.model.dto.request.UserRequest;
 import vn.com.huylq.springexample.model.dto.response.UserResponse;
 import vn.com.huylq.springexample.model.mapper.UserMapper;
 import vn.com.huylq.springexample.service.UserService;
 
 import javax.validation.Valid;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("${spring.application.name}/v1/users")
@@ -17,6 +20,16 @@ public class UserController {
 
     private final UserService userService;
     private final UserMapper userMapper;
+
+    @GetMapping
+    public Page<UserResponse> findAllUsers(Pageable pageable) {
+        Page<User> users = userService.getAll(pageable);
+        return new PageImpl<>(
+                users.stream().map(userMapper::UserToUserResponse).collect(Collectors.toList()),
+                pageable,
+                users.getTotalElements()
+        );
+    }
 
     @GetMapping("/{id}")
     public UserResponse findUser(@PathVariable("id") Long id) {
