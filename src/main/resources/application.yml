@@ -1,6 +1,3 @@
-server:
-  port: 8080
-
 spring:
   application:
     name: @name@
@@ -19,3 +16,12 @@ spring:
         format_sql: true
     open-in-view: true
     defer-datasource-initialization: true
+cache:
+  redis:
+    enable: true
+    timeout-seconds: 100
+    cache-expirations:
+      users: 100
+logging:
+  level:
+    org.springframework.cache: TRACE
